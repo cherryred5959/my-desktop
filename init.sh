@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# For Ubuntu 18.0.4 LTS
+
 # Kakao Mirror
 sudo sed -i 's/kr.archive.ubuntu.com/mirror.kakao.com\/ubuntu/g' /etc/apt/sources.list 
 sudo apt-get update
@@ -20,8 +22,18 @@ sudo apt-get install docker-compose -y
 sudo apt-get install git
 
 # Keyboard
-sudo cp ./xkorkeymap /etc/init.d/xkorkeymap 
-sudo chmod +x /etc/init.d/xkorkeymap
-sudo update-rc.d xkorkeymap defaults
+sudo cp ./xkorkeymap /usr/bin/xkorkeymap
+sudo chmod +x /usr/bin/xkorkeymap
+mkdir -p ~/.config/autostart
+cat << EOF | tee ~/.config/autostart/xkorkeymap.desktop
+[Desktop Entry]
+Type=Application
+Name=xkorkeymap
+Comment=xkorkeymap
+Exec=sh /usr/bin/xkorkeymap
+X-GNOME-Autostart-enabled=true
+Hidden=false
+NoDisplay=false
+EOF
 
 exit 0

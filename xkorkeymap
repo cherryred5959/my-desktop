@@ -1,28 +1,6 @@
 #!/bin/bash
 
-### BEGIN INIT INFO
-# Provides:          xkorkeymap
-# Default-Start:     2 3 4 5
-# Default-Stop:      0 1 6
-# Description:       This is a korean key setup
-### END INIT INFO
-
-case $1 in
- start)
-  xmodmap -e 'keycode 108 = Hangul'
-  xmodmap -e 'keycode 105 = Hangul_Hanja'
-  xmodmap -e 'remove mod1 = Hangul'
-  xmodmap -e 'remove control = Hangul_Hanja'
-  ;;
- stop)
-  fi
-  ;;
- restart)
-  ;;
- status)
-  ;;
- reload)
-  ;;
- *)
-  ;;
-esac
+xmodmap -e 'keycode 108 = Hangul'
+xmodmap -e 'keycode 105 = Hangul_Hanja'
+xmodmap -e 'remove mod1 = Hangul'
+xmodmap -e 'remove control = Hangul_Hanja'
