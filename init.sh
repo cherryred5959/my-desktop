@@ -28,12 +28,15 @@ mkdir -p ~/.config/autostart
 cat << EOF | tee ~/.config/autostart/xkorkeymap.desktop
 [Desktop Entry]
 Type=Application
-Name=xkorkeymap
+Name=Xkorkeymap
 Comment=xkorkeymap
-Exec=sh /usr/bin/xkorkeymap
+Exec=/usr/bin/xkorkeymap
+X-GNOME-Autostart-Delay=10
+X-MATE-Autostart-Delay=10
+X-KDE-autostart-after=panel
 X-GNOME-Autostart-enabled=true
-Hidden=false
-NoDisplay=false
 EOF
+
+chmod +x ~/.config/autostart/xkorkeymap.desktop
 
 exit 0
