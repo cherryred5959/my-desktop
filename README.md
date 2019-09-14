@@ -1,1 +1,3 @@
-# 우분투18.04 노트북 개인 개발환경
+# My development environment build script
+
+* Ubuntu 1804
