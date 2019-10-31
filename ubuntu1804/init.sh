@@ -30,6 +30,8 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get install docker-ce -y
 sudo usermod -aG docker $USER
+sudo cp ./daemon.json /etc/docker/
+sudo chmod 644 /etc/docker/daemon.json
 if [ "$WSL2" == true ]
 then
   sudo systemctl start docker
