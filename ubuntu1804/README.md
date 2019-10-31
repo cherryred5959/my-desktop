@@ -9,6 +9,6 @@ cd my-desktop-master/ubuntu1804
 
 chmod +x ./init.sh
 
-# If WSL2 with option `-w=true`
+# If WSL2 with option `-w true`
 ./init.sh 
 ```
